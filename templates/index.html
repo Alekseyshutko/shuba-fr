@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="featured-section">
+    <h2>The time of professionals</h2>
+    <div id="circles"><img class="first" src="static/images/clean1.png" /> <img src="static/images/built1.png" /> <img src="static/images/reparing.png" /> <img src="static/images/mover2.png" /> </div>
+    <!--end circles-->
+    <div id="image-slider">
+      <ul id="mycarousel" class="jcarousel-skin-tango">
+
+        <li class="first">
+          <div class="cardir-wrapper">
+        <div class="cardir">
+          {% if not session["user"] %}
+          <p>{{ order[0].title }}</p>
+          {% else %}
+          <a href="#"><p>{{ order[0].title }}</p></a>
+          {% endif %}
+
+          <p>{{order[0].description}}</p>
+          <p>{{order[0].price}}</p>
+        </li>
+        <li class="first">
+          <div class="cardir-wrapper">
+        <div class="cardir">
+
+           {% if not session["user"] %}
+          <p>{{ order[1].title }}</p>
+          {% else %}
+          <a href="#"><p>{{ order[1].title }}</p></a>
+          {% endif %}
+          <p>{{order[1].description}}</p>
+          <p>{{order[1].price}}</p>
+        </li>
+
+
+          <li class="first">
+          <div class="cardir-wrapper">
+        <div class="cardir">
+
+           {% if not session["user"] %}
+          <p>{{ order[2].title }}</p>
+          {% else %}
+          <a href="#"><p>{{ order[2].title }}</p></a>
+          {% endif %}
+          <p>{{order[2].description}}</p>
+          <p>{{order[2].price}}</p>
+        </li>
+
+
+        </li>
+
+      <li><div class="cardir-wrapper">
+        <div class="cardir">
+          {% if not session["user"] %}
+          <p>{{ executor[0].first_name }}</p>
+          {% else %}
+          <a href="#"><p>{{ executor[0].first_name }}</p></a>
+          {% endif %}
+          <p>{{speciality[0].title}}</p></li>
+
+
+         <li><div class="cardir-wrapper">
+        <div class="cardir">
+          {% if not session["user"] %}
+          <p>{{ executor[1].first_name }}</p>
+          {% else %}
+          <a href="#"><p>{{ executor[1].first_name }}</p></a>
+          {% endif %}
+          <p>{{speciality[1].title}}</p></li>
+
+
+        <li><div class="cardir-wrapper">
+        <div class="cardir">
+          {% if not session["user"] %}
+          <p>{{ executor[2].first_name }}</p>
+          {% else %}
+          <a href="#"><p>{{ executor[2].first_name }}</p></a>
+          {% endif %}
+          <p>{{speciality[1].title}}</p></li>
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <!--end image-slider-->
+  </div>
+  <!--end featured-section-->
+  <div id="frontpage-main">
+    <div id="frontpage-content">
+      <h3>Почему вы должны выбрать нас?</h3>
+      <p>
+Вы не пожалеете, если обратитесь к нам по поводу вашего нового проекта. Ниже приведены некоторые преимущества.</p>
+      <ul class="blue-bullets">
+        <li>Только провереннные пользователи</li>
+        <li>Этот cайт лучший в Беларуси</li>
+        <li>Вы можете как размещать заказы так и становиться их исполнителем</li>
+
+      </ul>
+    </div>
+    <!--end frontpage-content-->
+    <div id="frontpage-sidebar">
+      <h3>Обратная связь</h3>
+      <p>Если у вас влзникли какие либо вопросы вы всегда можете связаться с нами. Мы работаем для ывс круглосуточно</p>
+
+      <a class="read-more" href="/contact/cont">Напишите нам &raquo;</a> </div>
+
+    <!--end frontpage-sidebar-->
+  </div>
+  <!--end frontpage-main-->
+  <div id="footer">
+    <p> 2022 Частичное или полное копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных, строго запрещено.</p>
+
+
+
+    </div>
+  </div>
+  <!--end footer-->
+</div>
+<!--end wrap-->
+
+
+
+
+
+
+
+
+{% endblock %}

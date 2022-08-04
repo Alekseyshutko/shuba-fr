@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Shuba</title>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"  />
+<link type="text/css" rel="stylesheet"  href="{{ url_for('static', filename='css/skin.css')}}" />
+
+<!--[if IE 6]>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ie6.css')}}"  />
+<![endif]-->
+<!--[if IE 7]><link type="text/css" href="{{ url_for('static', filename='css/ie7.css')}}" rel="stylesheet" /><![endif]-->
+
+<!--[if IE 8]><link rel="stylesheet" href="static/css/ie8.css" /><![endif]-->
+</head>
+<body class="home">
+<div id="wrap">
+  <div id="header"> <a href="/"><img src="static/images/shuba-removebg-preview.png " /></a>
+
+    <div id="nav">
+      <ul class="menu">
+
+        <li><a href="/order/repair">Заказы</a>
+
+        </li>
+
+        <li><a href="/executor/execut">Исполнители</a></li>
+
+        {% if not session["user"] %}
+        <li><a href='/user/register'>Регистрация</a></li>
+        {% else %}
+        <li><a href="{{ url_for('user.user')}}">Личный кабинет</a></li>
+        {% endif %}
+
+        {% if not session["user"] %}
+          <li><a href='/user/login'>Войти</a></li>
+        {% else %}
+          <li><a href="{{ url_for('user.logout') }}">Выйти</a></li>
+          <li> {{ session["user"]["email"] }}</li>
+        {% endif %}
+       </ul>
+
+    </div>
+    <!--end nav-->
+  </div>
+  <!--end header-->
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
