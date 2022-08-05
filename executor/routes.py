@@ -5,7 +5,7 @@ from user.utils import get_current_user,user_retrieve_request
 from executor.utils import create_executor, executor_retriev, comment_add
 from config import Config
 
-CREATE_EXECUTOR_SPEC = f"{Config.API_URL}api/executor/?speciality="
+CREATE_EXECUTOR_SPEC = f"{Config.API_URL}/api/executor/?speciality="
 EXECUTOR = f"{Config.API_URL}/api/executor/"
 SPECIALITY = f"{Config.API_URL}/api/speciality/"
 EXECUTOR_COMENT = f'{Config.API_URL}/api/executor_comments/'
