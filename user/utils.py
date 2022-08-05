@@ -110,7 +110,7 @@ def users_list_request():
 
 def get_current_user() -> User:
     res = request_with_auth("GET", CURRENT_USER_URL)
-    print(res.content)
+    # print(res.content)
     # check_response_errors(res, 200)
     user = User(**res.json())
     return user
@@ -118,9 +118,9 @@ def get_current_user() -> User:
 
 def create_user(*args, **kwargs) -> User:
     register_user = RegisterUser(**kwargs)
-    print(register_user.json())
+    # print(register_user.json())
     res = requests.post(CREATE_USER_URL, json=register_user.dict())
     # check_response_errors(res, 201)
     user = User(**res.json())
-    print(user)
+    # print(user)
     return user
