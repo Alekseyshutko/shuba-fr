@@ -41,7 +41,7 @@ def add():
         form_data['order'] = order_id()
         s = json.dumps(form_data)
         photo_add(**form_data)
-        return redirect(url_for("index"))
+        return redirect(url_for("repair"))
     return render_template("add.html", form=form)
 
 

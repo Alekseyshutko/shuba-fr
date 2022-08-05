@@ -7,16 +7,16 @@ class Config:
     SECRET_KEY = os.getenv("SECRET_KEY", "this-is-the-default-key")
     BUCKET_NAME = os.getenv("BUCEKT_NAME", "shuba")
     S3_LOCATION = os.getenv("S3_LOCATION", "eu-central-1")
-    DEBUG = False
-    DEVELOPMENT = False
-
-class ProductionConfig(Config):
-    pass
-
-class StagingConfig(Config):
-    DEBUG = True
-
-
-class DevelopmentConfig(Config):
-    DEBUG = True
-    DEVELOPMENT = True
+    # DEBUG = False
+    # DEVELOPMENT = False
+#
+# class ProductionConfig(Config):
+#     pass
+#
+# class StagingConfig(Config):
+#     DEBUG = True
+#
+#
+# class DevelopmentConfig(Config):
+#     DEBUG = True
+#     DEVELOPMENT = True
