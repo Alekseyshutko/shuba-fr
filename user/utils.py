@@ -122,5 +122,5 @@ def create_user(*args, **kwargs) -> User:
     res = requests.post(CREATE_USER_URL, json=register_user.dict())
     # check_response_errors(res, 201)
     user = User(**res.json())
-    # print(user)
+    print(user)
     return user
