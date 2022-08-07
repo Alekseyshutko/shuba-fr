@@ -17,7 +17,7 @@ app.register_blueprint(executor_blueprint, url_prefix="/executor")
 app.config["SECRET_KEY"] = "12345678"
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
     order = requests.get(f"{Config.API_URL}/order/api/order/").json()
     executor = requests.get(f"{Config.API_URL}/api/executor/").json()
