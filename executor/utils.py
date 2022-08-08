@@ -4,6 +4,7 @@ from executor.models import Executor, RegisterExecutor, Comment, CommentAdd
 from user.utils import request_with_refresh
 
 
+
 CURRENT_USER_URL = f"{Config.API_URL}/api/users/me/"
 CREATE_USER_EXECUTOR = f"{Config.API_URL}/api/executor/"
 CREATE_USER_SPECIALIYY = f"{Config.API_URL}/api/speciality/"

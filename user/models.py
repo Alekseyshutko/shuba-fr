@@ -4,17 +4,17 @@ from flask import session
 from pydantic import BaseModel as PyModel, EmailStr, Extra, validator, Field
 
 
-# class BaseModel(PyModel):
-#     id: Optional[int]
-#     created: Optional[datetime]
-#     modified: datetime = None
-#
-#     def dict_without_none(self, **kwargs):
-#         return self.dict(exclude_none=True, **kwargs)
+class BaseModel(PyModel):
+    id: Optional[int]
+    created: Optional[datetime]
+    modified: datetime = None
+
+    def dict_without_none(self, **kwargs):
+        return self.dict(exclude_none=True, **kwargs)
 
 
 class StoreInSessionMixin:
-    def store_in_session(self: PyModel, **kwargs):
+    def store_in_session(self: BaseModel, **kwargs):
         session[self.__class__.__name__.lower()] = self.dict()
         session.modified = True
 
@@ -29,7 +29,7 @@ class ErrorModel(PyModel):
     message: str = "Something Wrong."
 
 
-class RegisterUser(PyModel):
+class RegisterUser(BaseModel):
     email: str
     password: str
     password_submit: str
@@ -44,7 +44,7 @@ class RegisterUser(PyModel):
         extra = Extra.ignore
 
 
-class Login(PyModel):
+class Login(BaseModel):
     email: str
     password: str
 
@@ -52,12 +52,12 @@ class Login(PyModel):
         extra = Extra.ignore
 
 
-class Auth(StoreInSessionMixin, PyModel):
+class Auth(StoreInSessionMixin, BaseModel):
     access: str
     refresh: str
 
 
-class User(StoreInSessionMixin, PyModel):
+class User(StoreInSessionMixin, BaseModel):
 
     email: str
 

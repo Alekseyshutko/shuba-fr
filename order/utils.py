@@ -36,3 +36,5 @@ def photo_add(*args, **kwargs) -> Photo:
 def order_id(*args, **kwargs):
     orde = requests.get(CREATE_ORDER).json()[-1]['id']
     return orde
+
+

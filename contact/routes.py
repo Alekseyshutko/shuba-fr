@@ -11,8 +11,6 @@ contact_blueprint = Blueprint(
     static_folder="static",
     url_prefix="/contact",
 )
-API = "http://127.0.0.1:8000"
-
 
 @contact_blueprint.route("/cont", methods=["GET", "POST"])
 def cont():
